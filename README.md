@@ -120,11 +120,7 @@ class GuessGame {
 - [Highlight.js](https://highlightjs.org/) за прекрасную подсветку кода
 - Сообществу JavaScript за вдохновение и поддержку
 
-## 📞 Контакты
 
-Ваше Имя - [@your-twitter](https://twitter.com/your-twitter) - email@example.com
-
-Ссылка на проект: [https://github.com/your-username/javascript-mastery](https://github.com/your-username/javascript-mastery)
 
 ---
 
