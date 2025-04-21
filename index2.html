@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript Learning Course - Интерактивный курс по изучению JavaScript">
+    <title>JavaScript Learning Course - PC Version</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: var(--font-sans);
+        }
+
+        code, pre {
+            font-family: var(--font-mono);
+        }
+
+        .header-content h1 {
+            text-decoration: none;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-content a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>JavaScript Learning Course</h1>
+                <nav class="nav-buttons">
+                    <button class="primary-btn" onclick="showCourse()" aria-label="Показать курс">Курс</button>
+                    <a href="validator.html" class="secondary-btn" aria-label="Компилятор кода">Компилятор кода</a>
+                    <a href="about.html" class="secondary-btn" aria-label="О JavaScript">О JavaScript</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <h2>Содержание курса</h2>
+                    <ul id="course-menu" role="navigation">
+                        <!-- Меню будет заполнено JavaScript -->
+                    </ul>
+                    <a href="about.html" class="sidebar-link" aria-label="Узнать больше о JavaScript">
+                        <span class="link-icon">ℹ️</span>
+                        <span class="link-text">Узнать больше о JavaScript</span>
+                    </a>
+                </div>
+            </aside>
+
+            <section class="course-content" id="course-content" role="main">
+                <!-- Содержание курса будет заполнено JavaScript -->
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/javascript-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/eslint/8.56.0/eslint.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prettier@2.8.8/standalone.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prettier@2.8.8/parser-babel.js"></script>
+    <script>
+        // Инициализация prettierPlugins после загрузки всех скриптов
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM loaded, checking Prettier...');
+            console.log('prettier:', typeof prettier);
+            console.log('prettierParserBabel:', typeof prettierParserBabel);
+            
+            if (typeof prettier === 'undefined') {
+                console.error('Prettier not loaded');
+                return;
+            }
+            if (typeof prettierParserBabel === 'undefined') {
+                console.error('Prettier parser not loaded');
+                return;
+            }
+            
+            window.prettierPlugins = {
+                babel: prettierParserBabel
+            };
+            console.log('Prettier initialized successfully with parser');
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

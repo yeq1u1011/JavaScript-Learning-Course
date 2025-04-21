@@ -1,0 +1,289 @@
+:root {
+    --primary-color: #61dafb;
+    --secondary-color: #4d4d4d;
+    --accent-color: #ff6b6b;
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --code-bg: #2d2d2d;
+    --border-color: #404040;
+    --success-color: #4caf50;
+    --error-color: #f44336;
+    --warning-color: #ff9800;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --font-mono: 'Fira Code', 'Consolas', monospace;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --gradient-primary: linear-gradient(135deg, #61dafb 0%, #4d4d4d 100%);
+    --gradient-accent: linear-gradient(135deg, #ff6b6b 0%, #ff9800 100%);
+    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    --hover-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    background: rgba(26, 26, 26, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-content h1 {
+    text-decoration: none;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.primary-btn {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(97, 218, 251, 0.3);
+}
+
+.secondary-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.primary-btn:hover {
+    background: var(--gradient-accent);
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.validator-container {
+    background-color: rgba(45, 45, 45, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    margin: 20px 0;
+}
+
+.code-editor {
+    background: rgba(26, 26, 26, 0.2);
+    backdrop-filter: blur(5px);
+    margin: 25px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.CodeMirror {
+    background: rgba(26, 26, 26, 0.15) !important;
+    backdrop-filter: blur(5px);
+    height: 400px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.CodeMirror-gutters {
+    background: rgba(26, 26, 26, 0.15) !important;
+    backdrop-filter: blur(5px);
+    border-right: 1px solid var(--border-color);
+    padding-right: 8px;
+}
+
+.CodeMirror-linenumber {
+    color: var(--text-color);
+    opacity: 0.5;
+}
+
+.CodeMirror-focused {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(97, 218, 251, 0.2);
+}
+
+.validator-controls {
+    background: rgba(26, 26, 26, 0.2);
+    backdrop-filter: blur(5px);
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.validator-controls button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.validator-controls button:hover {
+    transform: translateY(-2px);
+}
+
+.validation-results {
+    background: rgba(26, 26, 26, 0.2);
+    backdrop-filter: blur(5px);
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.stats-summary {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--bg-color);
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.error {
+    color: var(--error-color);
+    background-color: rgba(244, 67, 54, 0.1);
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border-left: 4px solid var(--error-color);
+}
+
+.warning {
+    color: var(--warning-color);
+    background-color: rgba(255, 152, 0, 0.1);
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border-left: 4px solid var(--warning-color);
+}
+
+.success {
+    color: var(--success-color);
+    background-color: rgba(76, 175, 80, 0.1);
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border-left: 4px solid var(--success-color);
+}
+
+.execution-output {
+    background: rgba(26, 26, 26, 0.2);
+    backdrop-filter: blur(5px);
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.execution-output h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.execution-output pre {
+    background: rgba(45, 45, 45, 0.3);
+    padding: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: var(--text-color);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .CodeMirror {
+        height: 300px;
+    }
+
+    .validator-controls {
+        flex-direction: column;
+    }
+
+    .validator-controls button {
+        width: 100%;
+    }
+} 
