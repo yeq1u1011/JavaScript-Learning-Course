@@ -1,4 +1,4 @@
-# 🚀 JavaScript Mastery - Интерактивная Платформа Обучения
+# 🚀 JavaScript Learning Course - Интерактивная платформа обучения
 
 <div align="center">
   <img src="https://img.shields.io/badge/JavaScript-ES6+-yellow.svg" alt="JavaScript ES6+">
